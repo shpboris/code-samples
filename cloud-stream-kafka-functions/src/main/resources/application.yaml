@@ -8,15 +8,16 @@ spring:
       bindings:
         producer-out-0:
           destination: original-messages
-          group: ${spring.application.name}
         processor-in-0:
           destination: original-messages
-          group: ${spring.application.name}
+          group: ${spring.application.name}-processor
         processor-out-0:
           destination: modified-messages
-          group: ${spring.application.name}
         consumer-in-0:
           destination: modified-messages
-          group: ${spring.application.name}
+          group: ${spring.application.name}-consumer
+      kafka:
+        binder:
+          brokers: localhost:9092
 server:
   port: 7000
