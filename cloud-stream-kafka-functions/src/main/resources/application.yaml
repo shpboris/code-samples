@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: cloud-stream-kafka-functions
+  cloud:
+    stream:
+      function:
+        definition: producer;processor;consumer
+      bindings:
+        producer-out-0:
+          destination: original-messages
+          group: ${spring.application.name}
+        processor-in-0:
+          destination: original-messages
+          group: ${spring.application.name}
+        processor-out-0:
+          destination: modified-messages
+          group: ${spring.application.name}
+        consumer-in-0:
+          destination: modified-messages
+          group: ${spring.application.name}
+server:
+  port: 7000
