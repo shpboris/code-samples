@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cloud-stream-kafka-channels
+  cloud:
+    stream:
+      bindings:
+        producer-out:
+          destination: original-messages
+          contentType: application/json
+        consumer-in:
+          destination: original-messages
+          contentType: application/json
+          group: ${spring.application.name}-consumer
+      kafka:
+        binder:
+          brokers: localhost:9092
+server:
+  port: 7000
