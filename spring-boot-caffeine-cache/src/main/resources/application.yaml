@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-caffeine-cache
+  cache:
+    type: caffeine
+    cache-names: users
+    caffeine:
+      spec: expireAfterWrite=5m
+server:
+  port: 7000
