@@ -19,5 +19,11 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
+  sleuth:
+    baggage:
+      remote-fields: my-trace-id
+      correlation-fields: my-trace-id
+      tag-fields: my-trace-id
+
 server:
   port: 7000

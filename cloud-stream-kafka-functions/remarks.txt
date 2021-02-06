@@ -1,3 +1,7 @@
 1.
 To create message use something like this from browser -
 http://localhost:7000/messages?msg=hui
+
+2.
+Sleuth is still not propagating the custom my-trace-id header - only its own
+b3 headers. Still leaving the config in application.yml - may be later will manage to fix it.
