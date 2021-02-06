@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mongodb-sleuth
+  data:
+    mongodb:
+      uri: mongodb://root:123@localhost:27017/?authSource=mytestdb
+      database: mytestdb
+
+server:
+  port: 8000
+  servlet:
+    context-path: /users
+

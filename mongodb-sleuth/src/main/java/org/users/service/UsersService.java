@@ -1,36 +1,36 @@
 package org.users.service;
 
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.users.domain.User;
+import org.users.repository.UsersRepository;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class UsersService {
 
-    Map<String, User> usersMap = new LinkedHashMap<>();
+    @Autowired
+    private UsersRepository usersRepository;
 
     public User save(User user){
-        return usersMap.put(user.getId(), user);
+        return usersRepository.save(user);
     }
 
     public List<User> findAll(){
-        return new ArrayList<>(usersMap.values());
+        return usersRepository.findAll();
     }
 
     public User findOne(String id){
-        return usersMap.get(id);
+        return usersRepository.findById(id).orElse(null);
     }
 
     public void delete(String id){
-        usersMap.remove(id);
+        usersRepository.deleteById(id);
     }
 
     public boolean exists(String id){
-        return ObjectUtils.isNotEmpty(usersMap.get(id));
+        return ObjectUtils.isNotEmpty(usersRepository.findById(id).orElse(null));
     }
 }
