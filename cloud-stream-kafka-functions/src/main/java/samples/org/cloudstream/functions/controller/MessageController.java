@@ -1,6 +1,6 @@
 package samples.org.cloudstream.functions.controller;
 
-import samples.org.cloudstream.functions.domain.Message;
+import samples.org.cloudstream.functions.domain.CustomMessage;
 import samples.org.cloudstream.functions.services.ProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class MessageController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void messages(@RequestParam("msg") String msg) {
 
-        Message message = Message.builder()
+        CustomMessage message = CustomMessage.builder()
             .value(msg)
             .creationTime(Instant.now())
             .build();

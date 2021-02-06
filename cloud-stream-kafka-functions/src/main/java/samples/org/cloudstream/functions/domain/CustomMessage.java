@@ -9,7 +9,7 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @Builder
-public class Message {
+public class CustomMessage {
     private String value;
     private Instant creationTime;
 }
