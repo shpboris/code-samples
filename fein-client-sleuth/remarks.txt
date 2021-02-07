@@ -1,0 +1,8 @@
+1.
+Start mongodb-sleuth application and current application (feign-client-sleuth)
+
+2.
+1.
+Use this to invoke the feign-client-sleuth API - http://localhost:7000/users/swagger-ui.html
+
+
