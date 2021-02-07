@@ -1,5 +1,14 @@
+spring:
+  application:
+    name: feign-client-sleuth
+  sleuth:
+    baggage:
+      remote-fields: my-trace-id
+      correlation-fields: my-trace-id
+      tag-fields: my-trace-id
 server:
   port: 7000
   servlet:
     context-path: /users
+remote-server-url: http://localhost:8000/users/
 

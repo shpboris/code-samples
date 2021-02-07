@@ -7,7 +7,7 @@ import org.users.domain.User;
 
 import java.util.List;
 
-@FeignClient(name = "users-client", url = "http://localhost:8000/users/")
+@FeignClient(name = "users-client", url = "${remote-server-url}")
 public interface UsersClient {
 
     @PostMapping(value = "users",

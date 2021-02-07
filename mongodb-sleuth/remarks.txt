@@ -1,2 +1,7 @@
 1.
 Use this to invoke the API - http://localhost:8000/users/swagger-ui.html
+
+2.
+Pay attention to configuration of my-trace-id header in application.yaml - it allows
+to make sleuth to pass custom header along the whole request chain ! The header is
+still not printed to log though, not sure why ....

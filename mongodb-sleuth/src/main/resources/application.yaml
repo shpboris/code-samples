@@ -1,11 +1,15 @@
 spring:
   application:
     name: mongodb-sleuth
+  sleuth:
+    baggage:
+      remote-fields: my-trace-id
+      correlation-fields: my-trace-id
+      tag-fields: my-trace-id
   data:
     mongodb:
       uri: mongodb://root:123@localhost:27017/?authSource=mytestdb
       database: mytestdb
-
 server:
   port: 8000
   servlet:
