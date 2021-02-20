@@ -30,7 +30,7 @@ public class UserController {
 		}
 		usersService.save(user);
 		HttpHeaders httpHeaders = new HttpHeaders();
-		return new ResponseEntity<>(null, httpHeaders, HttpStatus.CREATED);
+		return new ResponseEntity<>(user, httpHeaders, HttpStatus.CREATED);
 	}
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
